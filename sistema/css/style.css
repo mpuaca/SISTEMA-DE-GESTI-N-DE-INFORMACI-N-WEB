@@ -1,0 +1,484 @@
+
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+/*** Layout ***/
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    height: 100vh;
+    overflow-y: auto;
+    background: #0C356A;
+    transition: 0.5s;
+    z-index: 999;
+}
+.nav1{
+    background-color: #0C356A;
+}
+.icon{
+    color:#000000;
+}
+
+.content {
+    margin-left: 250px;
+    min-height: 100vh;
+    background: #ffffff;
+    transition: 0.5s;
+}
+@media (max-width: 780px) {
+    .navbar {
+        position: relative; /* Cambiar la posición a relativa en lugar de fija */
+    }
+
+    .sidebar {
+        margin-top: 50px; /* Agrega espacio en la parte superior para el logotipo */
+        position: absolute; /* Cambiar la posición a absoluta */
+    }
+}
+@media (min-width: 992px) {
+    .sidebar {
+        margin-left: 0;
+    }
+
+    .sidebar.open {
+        margin-left: -250px;
+    }
+
+    .content {
+        width: calc(100% - 250px);
+    }
+    .rounded {
+        width: 100%; /* Ocupa todo el ancho en dispositivos móviles */
+        max-width: none; /* Elimina el límite de ancho máximo */
+    }
+    .calendario {
+        width: 90%; /* Puedes ajustar el ancho según tus necesidades en dispositivos móviles */
+        max-width: none; /* Elimina el límite de ancho máximo */
+        margin: 0 auto; /* Sigue centrando el elemento horizontalmente */
+    }
+    .fc .fc-button-primary {
+        display: block;
+        margin: 0 auto;
+    }
+    .content.open {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        margin-left: -250px;
+    }
+
+    .sidebar.open {
+        margin-left: 0;
+    }
+
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.encabezado{
+ background-color: #fdfdfd;
+}
+/*** Navbar ***/
+.sidebar .navbar .navbar-nav .nav-link {
+    padding: 7px 20px;
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 0 30px 30px 0;
+    outline: none;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover,
+.sidebar .navbar .navbar-nav .nav-link.active {
+    color: #FFFFFF;
+    background: #495057;
+    border-color: black;
+}
+
+.sidebar .navbar .navbar-nav .nav-link i {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 40px;
+}
+
+.sidebar .navbar .navbar-nav .nav-link:hover i,
+.sidebar .navbar .navbar-nav .nav-link.active i {
+    background: #ffffff;
+}
+
+.sidebar .navbar .dropdown-toggle::after {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: .5s;
+}
+.sidebar .navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+
+.sidebar .navbar .dropdown-item {
+    padding-left: 25px;
+    border-radius: 0 30px 30px 0;
+    color: #ffffff ;
+}
+
+.content .navbar .navbar-nav .nav-link {
+    margin-left: 25px;
+    padding: 12px 0;
+    color: var(--dark);
+    outline: none;
+}
+
+.content .navbar .navbar-nav .nav-link:hover,
+.content .navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+.content .navbar .sidebar-toggler,
+.content .navbar .navbar-nav .nav-link i {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background:#001C30;
+    color: #FFFFFF;
+    border-radius: 40px;
+}
+
+.content .navbar .dropdown-toggle::after {
+    margin-left: 6px;
+    vertical-align: middle;
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    transition: .5s;
+}
+
+.content .navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+
+@media (max-width: 575.98px) {
+    .content .navbar .navbar-nav .nav-link {
+        margin-left: 15px;
+    }
+}
+
+
+/*** Date Picker ***/
+.bootstrap-datetimepicker-widget.bottom {
+    top: auto !important;
+}
+
+.bootstrap-datetimepicker-widget .table * {
+    border-bottom-width: 0px;
+}
+
+.bootstrap-datetimepicker-widget .table th {
+    font-weight: 500;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+    background: var(--primary);
+}
+
+.bootstrap-datetimepicker-widget table td.today::before {
+    border-bottom-color: var(--primary);
+}
+
+
+/*** Testimonial ***/
+.progress .progress-bar {
+    width: 0px;
+    transition: 2s;
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    border: 5px solid var(--primary);
+    border-radius: 15px;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    background: var(--dark);
+    border-color: var(--primary);
+}
+
+.iconedit {
+    font-size: 20px; /* Cambia el tamaño a 24px */
+    color: #015907;
+    margin-right: 10px;
+    margin-left: 10px
+}
+.iconedit:hover {
+    color: #015907; /* Cambia el color a azul cuando está en hover */
+}
+.icondelet {
+    font-size: 20px; /* Cambia el tamaño a 24px */
+    color: #c80606;
+    margin-right: 10px;
+    margin-left: 10px
+}
+.icondelet:hover {
+    color: #c80606; /* Cambia el color a azul cuando está en hover */
+}
+
+/* Espacio entre los títulos y el contenido */
+h6 {
+    margin-bottom: 20px; /* Agrega espacio después de los subtítulos */
+}
+.container-btn{
+    text-align: right; /* Alinea el contenido a la derecha */
+}
+/* Estilo para el botón "Agregar" */
+.btn-agregar  { 
+    margin-bottom: 5px;
+    
+}
+.botones{
+
+    text-align: center; 
+}
+/* Espacio entre las filas de la tabla */
+.table tr {
+    margin-bottom: 10px; /* Agrega espacio entre filas de la tabla */
+}
+
+.table tr {
+    margin-bottom: 10px; /* Agrega espacio entre filas de la tabla */
+}
+.active1 {
+    position: relative;
+}
+a {
+    text-decoration: none !important;
+}
+.active1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Ancho y color de la línea azul */
+    background-color: #011429; /* Color azul */
+}
+/* Quitar la línea de referencia de los enlaces visitados */
+a:visited {
+    text-decoration: none;
+}
+
+/* Quitar la línea de referencia de los enlaces enfocados */
+a:focus {
+    outline: none;
+}
+
+/* Cambiar el color de la letra de los enlaces visitados */
+
+
+.custom-checkbox {
+    transform: scale(1.5); /* Ajusta el valor según tu preferencia para aumentar el tamaño */
+    /* Otros estilos opcionales, como colores, márgenes, etc. */
+    text-align: center ;
+}
+
+/* Añadir un estilo a las celdas de la tabla para centrar los checkbox */
+.table td input[type="checkbox"] {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+/* Clase para la tabla con bordes verticales */
+
+.dropdown-item.active{
+    background-color: #3F2305 !important;
+}
+  .dropdown-item:focus, .dropdown-item:hover {
+    color: #fff !important;
+    background-color: #212529 !important;
+}
+.rounded {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+ /* Sombra para crear efecto de relieve */
+    width: 90%; /* Por ejemplo, ocupa el 90% del ancho disponible */
+    max-width: 600px; /* O limita el ancho máximo para evitar que sea demasiado ancho en pantallas grandes */
+    margin: 0 auto; /* Centra el elemento horizontalmente */
+}
+
+.icono{
+    color: #fff !important;
+}
+.table>:not(caption)>*>*{
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+.vertical-spacing {
+    margin-bottom: 20px; /* Ajusta la cantidad de espacio vertical según tus necesidades */
+}
+.calendario{
+    width: 75%; /* Por ejemplo, ocupa el 90% del ancho disponible */
+    max-width: 600px; /* O limita el ancho máximo para evitar que sea demasiado ancho en pantallas grandes */
+    margin: 0 auto; /* Centra el elemento horizontalmente */
+}
+.fc .fc-button-primary {
+    background-color: #041f47;
+}
+
+.fc .fc-button-primary {
+    background-color: #041f47;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+/* Estilos para el contenedor horizontal */
+.horizontal-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Estilos para las celdas de la tabla (puede necesitar ajustes) */
+table.dataTable thead th, table.dataTable thead td, table.dataTable tfoot th, table.dataTable tfoot td{
+    text-align: center !important;
+}
+.table td {
+    text-align: center;
+}
+.nombre{
+    text-align: left !important;
+}
+/* Estilo para los bloques con sombra */
+.tarjeta{
+    background-color: #fff; /* Color de fondo */
+    border: 1px solid #e0e0e0; /* Borde */
+    border-radius: 8px; /* Borde redondeado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Alineación de texto al centro */
+}
+
+/* Estilo para los íconos */
+.icono1 {
+    color: #FF8400 !important; /* Color del ícono */
+
+}
+.tar1{
+    color: #4F200D;
+}
+.s1{
+    color: #4F200D ;
+}
+.icono2{
+    color: #C70039 !important;
+}
+.tar2{
+    color: #141E46;
+}
+.s2{
+    color: #141E46;
+}
+.icono3{
+    color: #D2DE32 !important;
+}
+.tar3{
+    color: #4C4B16;
+}
+.s3{
+    color: #4C4B16;
+}
+/* Estilo para los títulos */
+h6 {
+    color: #333; /* Color del texto del título */
+}
+.editar{
+    align-items: center;
+    justify-content: center;
+}
+th {
+    background-color: #ffffff !important;
+    color: #706233 !important;
+}
+
+/* Estilos para el pie de página */
+.footer {
+    background-color: #ffffff; /* Color de fondo del pie de página */
+    color: rgb(160, 160, 160); /* Color del texto en el pie de página */
+    text-align: center; /* Alineación del contenido en el centro */
+    padding: 20px; /* Espaciado interno del pie de página */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para la imagen en el pie de página */
+.footer img {
+    width: 50px; /* Ancho de la imagen */
+    display: inline-block; /* Para que la imagen esté en línea con el texto */
+    margin-right: 10px; /* Espaciado entre la imagen y el texto */
+}
+
+/* Estilos para los párrafos en el pie de página */
+.footer p {
+    margin: 0; /* Elimina el margen predeterminado en los párrafos */
+    display: inline-block; /* Para que el texto esté en línea con la imagen */
+}
